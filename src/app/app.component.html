@@ -5,11 +5,11 @@
             <img src="assets/images/favicon.png" width="40"/>
             <h1 class="margin-small-left">List tool</h1>
         </div></a>
-        <div *ngIf="Auth.isLoggedIn" class="options flex flex-right flex-middle">
-            <button id="logout-button" class="busy-func">
-                <span class="hidden@max-phone">Logout</span>
-                <app-icon class="hidden@min-phone position-center icon" name="sign-out"></app-icon>
-                <app-icon class="spinner position-center" name="spinner"></app-icon>
+        <div class="options flex flex-right flex-middle">
+            <button (click)="logout()" [disabled]="busy">
+                <span *ngIf="!busy" class="hidden@max-phone">Logout</span>
+                <app-icon *ngIf="!busy" class="hidden@min-phone position-center" name="sign-out"></app-icon>
+                <app-icon *ngIf="busy" class="spinner position-center" name="spinner"></app-icon>
             </button>
             <button id="create-button" class="primary margin-small-left busy-func">
                 <span class="hidden@max-phone">Create new</span>

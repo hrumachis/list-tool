@@ -12,9 +12,9 @@ const forceSSL = function() {
 }
 
 app.use(forceSSL());
-app.use(express.static(__dirname + '/src'));
+app.use(express.static(__dirname + '/disc'));
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/src/index.html'));
+  res.sendFile(path.join(__dirname + '/disc/index.html'));
 });
 app.listen(process.env.PORT || 5000);
 

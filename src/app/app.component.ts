@@ -19,11 +19,11 @@ export class AppComponent {
     if (!this.busy) {
         this.busy = true;
 
-        setTimeout(function() {
-            self.busy = false;
-            self.Auth.logout();
-            self.router.navigate(['login']);
-        }, 1000);
+      setTimeout(function() {
+          self.busy = false;
+          self.Auth.logout();
+          self.router.navigate(['login']);
+      }, 1000);
     }
   }
 }

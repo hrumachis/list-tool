@@ -5,6 +5,7 @@
   "projects": {
     "webApp": {
       "root": "",
+      "outDir": "dist",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",

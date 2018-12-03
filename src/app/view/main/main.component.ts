@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { $ } from 'protractor';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-main',
@@ -14,9 +15,10 @@ export class MainComponent implements OnInit {
     currentIndex: number
     currentId: string;
     busyModal: boolean = false;
+    busyLogout: boolean = false;
     gridView: boolean = false;
 
-    constructor(private Database: DataService) { }
+    constructor(private Auth: AuthService, private Database: DataService, private router: Router) { }
 
     ngOnInit() {
         let self = this;
@@ -24,6 +26,10 @@ export class MainComponent implements OnInit {
 
 		document.getElementById("create-button").onclick = function() {
 			self.put(this);
+        };
+        
+        document.getElementById("logout-button").onclick = function() {
+			self.logout(this);
 		};
 
 		this.Database.getData().subscribe((data) => {
@@ -36,6 +42,20 @@ export class MainComponent implements OnInit {
     toggleView() {
         this.gridView = !this.gridView;
         localStorage.setItem("grid-view", String(this.gridView));
+    }
+
+    logout(elm) {
+        let self = this;
+    
+        if (!this.busy) {
+            this.busy = true;
+    
+          setTimeout(function() {
+              self.busy = false;
+              self.Auth.logout();
+              self.router.navigate(['login']);
+          }, 1000);
+        }
     }
 
 	put(elm) {

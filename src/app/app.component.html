@@ -1,8 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div id="header">
     <div class="fixed-size">
-        <a href="/"><div class="title float-left">
-            <h1>List tool</h1>
+        <a href="/"><div class="title flex flex-left flex-middle">
+            <img src="assets/images/favicon.png" width="40"/>
+            <h1 class="margin-small-left">List tool</h1>
         </div></a>
         <div *ngIf="Auth.isLoggedIn" class="options flex flex-right flex-middle">
             <button (click)="logout()" [disabled]="busy">

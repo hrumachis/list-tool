@@ -1,0 +1,41 @@
+#header {
+    $header-height: 50px;
+
+    background-color: #fff;
+    border-bottom: solid 1px #bfbfbf;
+    line-height: $header-height;
+    height: $header-height;
+    width: 100%;
+    
+    > div {
+        height: 100%;
+    }
+    
+    h1 {
+        line-height: $header-height;
+    }
+
+    .options {
+        float: right;
+        height: 50px;
+        vertical-align: middle;
+    }
+}
+
+button.busy-func {
+    .spinner {
+        display: none;
+    }
+
+    &[busy=true] {
+        pointer-events: none;
+        
+        .spinner {
+            display: initial;
+        }
+
+        span, .icon {
+            display: none
+        }
+    }
+}

@@ -1,0 +1,57 @@
+$screen-phone: 414px;
+
+fieldset {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    max-width: 100%;
+    width: 350px;
+    padding: 20px 20px;
+    text-align: right;
+}
+
+@media (max-width: $screen-phone - 1px) {
+    form {
+        display: block !important;
+        max-width: 100%;
+    }
+    
+    fieldset {
+        border-radius: 0px;
+        margin: 0px;
+        width: auto;
+    }
+}
+
+.field {
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.info-message {
+    background-color: #fbfbfb;
+    border: solid 1px #ececec;
+    border-radius: 10px 10px 10px 0px;
+    bottom: 100%;
+    box-sizing: border-box;
+    left: 0px;
+    padding: 8px 12px;
+    position: absolute;
+    text-align: left;
+    width: 100%;
+
+    app-icon {
+        color: #ff0e4c;
+    }
+}
+
+.error-message {
+    color: #ff0e4c;
+    text-align: center;
+}
+
+.success-message {
+    color: #8bc34a;
+    text-align: center;
+}

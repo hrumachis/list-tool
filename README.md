@@ -14,7 +14,7 @@ Run these commands from your app’s root directory <br/>
 Install heroku `npm install -g heroku`<br/>
 Login into heroku account `heroku login`<br/>
 After successfully login create new heroku application `heroku create newappname`<br/><br />
-Deploy myApp to heroku<br/>
+Deploy application to heroku<br/>
 `git init`<br/>
 `heroku git:remote -a newappname`<br/>
 `git add .`<br/>

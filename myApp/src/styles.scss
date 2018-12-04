@@ -1,1 +1,601 @@
 /* You can add global styles to this file, and also import other style files */
+$screen-desktop: 1920px;
+$screen-tablet: 1024px;
+$screen-phone: 414px;
+
+$font-primary: ProximaNova,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+$font-title: 'Raleway', sans-serif;
+
+$color-primary: #a259d0;
+$color-primary-hover: #7835a3;
+
+a {
+    color: $color-primary;
+    font-family: $font-primary;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.1s;
+
+    &:hover {
+        color: $color-primary-hover;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    color: #5f5f5f;;
+    background-color: #f4f4f4;
+    font-family: $font-primary;
+    font-size: 14px;
+    margin: 0px;
+    overflow: hidden;
+    text-align: center;
+
+    @media (max-width: $screen-phone - 1px) {
+        background-color: white;
+    }
+}
+
+main {
+    box-sizing: border-box;
+    height: calc(100% - 51px);
+    overflow: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+    @media (max-width: $screen-phone - 1px) {
+        padding: 0px;
+    }
+}
+
+app-icon {
+    display: inline-block;
+    fill: currentcolor;
+    vertical-align: middle;
+    margin-top: 2px;
+}
+
+.fixed-size {
+    display: inline-block;
+    max-width: calc(100% - 20px);
+    width: $screen-tablet;
+    text-align: left;
+}
+
+@media (max-width: $screen-phone - 1px) {
+    :not(#header)  > .fixed-size {
+        max-width: 100%;
+    }
+}
+
+// -------------------------> Background <------------------------- //
+.bg-transparent {
+    background-color: transparent !important;
+}
+
+// -------------------------> Buttons <------------------------- //
+button {
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 3px;
+    color: #737373;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $font-primary;
+    font-size: 16px;
+    min-height: 34px;
+    min-width: 100px;
+    padding: 6px 14px;
+    position: relative;
+    transition: background-color 0.1s;
+    outline: none;
+
+    &:hover {
+        background-color: #dfdfdf;
+        color: black;
+    }
+
+    &.primary {
+        background-color: $color-primary;
+        color: white;
+        font-weight: 500;
+
+        &:hover {
+            background-color: $color-primary-hover;
+        }
+    }
+
+    &[disabled] {
+        pointer-events: none;
+    }
+
+    &.shrink {
+        min-width: 34px;
+    }
+
+    @media (max-width: $screen-phone) {
+        &:not(.not-shrink) {
+            min-width: 34px;
+        }
+    }
+}
+
+// -------------------------> Form <------------------------- //
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content}
+}
+  
+input {
+    background-color: #f4f4f4;
+    border: none;
+    box-sizing: border-box;
+    margin: 4px 0px;
+    outline: none;
+    padding: 10px 10px;
+    width: 100%;
+
+    @include placeholder {
+        font-family: $font-primary;
+        color: grey;
+    }
+
+    &:focus {
+        &::-webkit-input-placeholder {
+            color: transparent !important;
+        }
+        &:-moz-placeholder {
+            color: transparent !important;
+        }
+        &::-moz-placeholder {
+            color: transparent !important;
+        }
+        &:-ms-input-placeholder {
+            color: transparent !important;
+        }
+    }
+}
+
+// -------------------------> Form <------------------------- //
+.flex { 
+    display: flex;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-middle {
+    align-items: center;
+}
+
+.flex-top {
+    align-items: flex-start;
+}
+
+// -------------------------> Table <------------------------- /
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+
+    td {
+        padding: 16px 12px;
+        vertical-align: top
+    }
+
+    th {
+        padding: 16px 12px;
+        text-align: left;
+        vertical-align: bottom;
+        font-size: 12px;
+        font-weight: normal;
+        color: #999;
+        text-transform: uppercase
+    }
+
+    tfoot {
+        font-size: 14px
+    }
+
+    caption {
+        font-size: 14px;
+        text-align: left;
+        color: #999
+    }
+}
+
+*+.utable {
+    margin-top: 20px
+}
+
+.table td>:last-child {
+    margin-bottom: 0
+} 
+
+.table-middle,
+.table-middle td {
+    vertical-align: middle !important
+}
+
+.table-divider>tr:not(:first-child),
+.table-divider>:not(:first-child)>tr,
+.table-divider>:first-child>tr:not(:first-child) {
+    border-top: 1px solid #e5e5e5
+}
+
+.table-striped>tr:nth-of-type(odd),
+.table-striped tbody tr:nth-of-type(odd) {
+    background: #f8f8f8;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.table-hover>tr:hover,
+.table-hover tbody tr:hover {
+    background: #ffd
+}
+
+.table>tr.uk-active,
+.table tbody tr.uk-active {
+    background: #ffd
+}
+
+.table-small th,
+.table-small td {
+    padding: 10px 12px
+}
+
+.table-large th,
+.table-large td {
+    padding: 22px 12px
+}
+
+.table-justify th:first-child,
+.table-justify td:first-child {
+    padding-left: 0
+}
+
+.table-justify th:last-child,
+.table-justify td:last-child {
+    padding-right: 0
+}
+
+.table-shrink {
+    width: 1px
+}
+
+.table-expand {
+    min-width: 150px
+}
+
+.table-link {
+    padding: 0 !important
+}
+
+.table-link>a {
+    display: block;
+    padding: 16px 12px
+}
+
+.table-small .table-link>a {
+    padding: 10px 12px
+}
+
+@media (max-width: 959px) {
+    .table-responsive,
+    .table-responsive tbody,
+    .table-responsive th,
+    .table-responsive td,
+    .table-responsive tr {
+        display: block
+    }
+    .table-responsive thead {
+        display: none
+    }
+    .table-responsive th,
+    .table-responsive td {
+        width: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        overflow: visible !important;
+        white-space: normal !important
+    }
+    .table-responsive th:not(:first-child):not(.table-link),
+    .table-responsive td:not(:first-child):not(.table-link),
+    .table-responsive .table-link:not(:first-child)>a {
+        padding-top: 5px !important
+    }
+    .table-responsive th:not(:last-child):not(.table-link),
+    .table-responsive td:not(:last-child):not(.table-link),
+    .table-responsive .table-link:not(:last-child)>a {
+        padding-bottom: 5px !important
+    }
+    .table-justify.table-responsive th,
+    .table-justify.table-responsive td {
+        padding-left: 0;
+        padding-right: 0
+    }
+}
+
+.table tbody tr {
+    transition: background-color .1s linear
+}
+
+.table-button {
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: black;
+    }
+}
+
+// -------------------------> width <------------------------- //
+.width-1-1 {
+    width: 100%;
+}
+
+@media (max-width: $screen-phone - 1px) {
+    .width-1-1\@max-phone {
+        width: 100%;
+    }
+}
+
+// -------------------------> Text <------------------------- //
+.primary-color {
+    color: $color-primary;
+}
+
+// -------------------------> Text <------------------------- //
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-middle {
+    vertical-align: middle;
+}
+
+// -------------------------> Headers <------------------------- //
+h1 {
+    color: $color-primary;
+    font-family: $font-title;
+    font-size: 30px;
+    font-weight: 200;
+    line-height: 50px;
+    margin: 0px;
+}
+
+h2 {
+    color: #636363;
+    font-family: $font-title;
+    font-size: 25px;
+    font-weight: 200;
+    margin: 0px;
+}
+
+// -------------------------> Utility <------------------------- //
+.height-1-1 {
+    height: 100%;
+}
+
+.float-left { 
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.padding-medium {
+    padding: 40px;
+}
+
+// -------------------------> Padding <------------------------- //
+.padding-small {
+    padding: 10px;
+}
+
+// -------------------------> Margin <------------------------- //
+.margin-small-top {
+    margin-top: 10px;
+}
+
+@media (max-width: $screen-phone - 1px) {
+    .margin-small-top\@max-phone {
+        margin-top: 10px;
+    }
+}
+
+.margin-small-left {
+    margin-left: 10px;
+}
+
+.margin-small-right {
+    margin-right: 10px;
+}
+
+.margin-small-bottom {
+    margin-bottom: 10px;
+}
+@media (min-width: $screen-phone) {
+    .margin-small-bottom\@max-phone {
+        margin-bottom: 10px;
+    }
+}
+
+.margin-top {
+    margin-top: 20px;
+}
+
+@media (min-width: $screen-phone) {
+    .margin-top\@min-phone {
+        margin-top: 20px;
+    }
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+
+
+// -------------------------> Poaition <------------------------- //
+.position-center {
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: table;
+    width: -moz-max-content;
+    max-width: 100%;
+}
+
+[class*='position-top'], [class*='position-bottom'], [class*='position-left'], [class*='position-right'], [class*='position-center'] {
+    position: absolute !important;
+}
+
+// -------------------------> Hidden <------------------------- //
+.hidden {
+    display: none;
+}
+
+@media (max-width: $screen-phone - 1px) {
+    .hidden\@max-phone {
+        display: none;
+    }
+}
+
+@media (min-width: $screen-phone) {
+    .hidden\@min-phone {
+        display: none;
+    }
+}
+
+@media (max-width: $screen-tablet - 1px) {
+    .hidden\@max-tablet {
+        display: none;
+    }
+}
+
+@media (min-width: $screen-tablet) {
+    .hidden\@min-tablet {
+        display: none;
+    }
+}
+
+// -------------------------> Animations <------------------------- //
+[class*='animation-'] {
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+}
+
+.animation-fade {
+    animation-name: fade;
+    animation-duration: .2s;
+    animation-timing-function: linear;
+}
+
+.animation-slide-left {
+    animation-name: fade-left;
+}
+
+.animation-slide-right {
+    animation-name: fade-right;
+}
+
+.animation-slide-top {
+    animation-name: fade-top
+}
+
+.spinner >* {
+    animation: spinner-rotate 1.4s linear infinite;
+}
+
+@keyframes spinner-rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(270deg)
+    }
+}
+
+@keyframes fade-top {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes spinner-dash {
+    0% {
+        stroke-dashoffset: 88px
+    }
+    50% {
+        stroke-dashoffset: 22px;
+        transform: rotate(135deg)
+    }
+    100% {
+        stroke-dashoffset: 88px;
+        transform: rotate(450deg)
+    }
+}
+
+.spinner>*>* {
+    stroke-dasharray: 88px;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation: spinner-dash 1.4s ease-in-out infinite;
+    stroke-width: 1;
+    stroke-linecap: round;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes fade-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+@keyframes fade-right {
+    0% {
+        opacity: 0;
+        transform: translateX(10px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
+import { Router } from '@angular/router';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'myApp';
+  busy: boolean = false;
+
+  constructor(private Auth: AuthService, private Database: DataService, private router: Router) { }
+
+  logout() {
+    let self = this;
+
+    if (!this.busy) {
+      this.busy = true;
+
+      setTimeout(function() {
+          self.busy = false;
+          self.Auth.logout();
+          self.router.navigate(['login']);
+      }, 1000);
+    }
+  }
 }

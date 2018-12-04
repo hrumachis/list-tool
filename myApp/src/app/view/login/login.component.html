@@ -1,0 +1,54 @@
+<form class="flex flex-center flex-middle height-1-1 animation-fade" (submit)="submit($event)">
+    <fieldset>
+        <div class="text-center margin-bottom padding-small">
+            <h2>Login</h2>
+        </div>
+
+        <div class="margin-bottom">
+            <div *ngFor="let item of errorText; let i = index" class="error-message animation-slide-left" [ngClass]="{ 'animation-slide-right': i % 2 != 0 }">
+                <app-icon class="text-middle margin-small-right" name="warning"></app-icon>
+                <span class="text-middle">{{ item }}</span>
+            </div>
+            <div *ngIf="success" class="success-message animation-slide-left">
+                <app-icon class="text-middle margin-small-right" name="check"></app-icon>
+                <span class="text-middle">Successfully logged in</span>
+            </div>
+        </div>
+
+        <div class="field">
+            <input required type="text" placeholder="Username" (blur)="exitFocus()" (keydown)="inputUsername($event)" [(ngModel)]="username" name="username" autocomplete="off">
+            <div *ngIf="showInfo == 1" class="info-message animation-fade">
+                <app-icon class="text-middle margin-small-right" name="warning"></app-icon>
+                <span class="text-middle">{{ infoText }}</span>
+            </div>
+        </div>
+
+        <div class="field">
+            <input required type="password" placeholder="Password" (blur)="exitFocus()" (keydown)="inputPassword($event)" [(ngModel)]="password" name="password" autocomplete="off">
+            <div *ngIf="showInfo == 2" class="info-message">
+                <app-icon class="text-middle margin-small-right" name="warning"></app-icon>
+                <span class="text-middle">{{ infoText }}</span>
+            </div>
+        </div>
+
+        <div class="field">
+            <input required type="text" placeholder="Port" (blur)="exitFocus()" (keydown)="inputPort($event)" [(ngModel)]="port" name="port" autocomplete="off">
+            <div *ngIf="showInfo == 3" class="info-message">
+                <app-icon class="text-middle margin-small-right" name="warning"></app-icon>
+                <span class="text-middle">{{ infoText }}</span>
+            </div>
+        </div>
+
+        <div class="margin-small-top margin-top@min-phone">
+            <button class="primary not-shrink width-1-1@max-phone" type="submit" [disabled]="busy">
+                <span *ngIf="!busy">Login</span>
+                <app-icon *ngIf="busy" class="spinner position-center" name="spinner"></app-icon>
+            </button>
+
+            <div class="float-left text-left margin-small-top@max-phone">
+                <span>Don't have an account yet?</span><br>
+                <a href="/register">Sign up</a>
+            </div>
+        </div>
+    </fieldset>
+</form>

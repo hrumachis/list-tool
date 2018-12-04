@@ -13,7 +13,7 @@ Navigate to `http://localhost:4200/`.
 Run these commands from your app’s root directory <br/>
 Install heroku `npm install -g heroku`<br/>
 Login into heroku account `heroku login`<br/>
-If successfully loged in create new heroku application `heroku create newappname`<br/><br />
+If successfully login create new heroku application `heroku create newappname`<br/><br />
 Deploy myApp to heroku<br/>
 `git init`<br/>
 `heroku git:remote -a newappname`<br/>

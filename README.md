@@ -1,7 +1,7 @@
 # MyApp
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
-* json-server REST API for static data [JSON-SERVER](https://staticdata.herokuapp.com)*
+* REST API for static data [JSON-SERVER](https://staticdata.herokuapp.com)<br />
     GitHub: `https://github.com/hrumachis/json-server`
 
 ## Live Demo version

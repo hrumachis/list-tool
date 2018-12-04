@@ -6,7 +6,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 })
 export class AuthService {
 	// Authentication server ur
-	readonly ROOT_URL = 'http://hrumachi.com';
+	readonly ROOT_URL = 'https://hrumachi.herokuapp.com';
 	private loggedInState = false;
 
 	constructor(private http: HttpClient) { }

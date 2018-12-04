@@ -7,11 +7,20 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Running localy
 Inside "myApp" directory run `ng serve` for a dev server.<br/>
-Navigate to `http://localhost:4200/`.<br/>
-The app will automatically reload if you change any of the source files.
+Navigate to `http://localhost:4200/`.
 
-## Deploying project to Heroku
-Make sure you have heroku account
+## Running remotly (Heroku)
+Inside "myApp" directory <br />
+Install heroku `npm install -g heroku`<br/>
+Login into heroku account `heroku login`<br/>
+If successfully loged in create new heroku application  `heroku create newAppName`<br/>
+Deploy myApp to heroku<br/>
+`git add .`<br/>
+`git commit -m "first deploy"`<br/>
+`git push heroku master`<br/>
+<br/>
+Now after the work is committed, we just need to run<br/>
+`npm run deploy`<br/>
 
 ## Build
 Run `ng build` to build the project.<br/>

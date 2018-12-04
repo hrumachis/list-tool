@@ -13,8 +13,11 @@ Navigate to `http://localhost:4200/`.
 Navigate to "myApp" parent directory <br /><br />
 Install heroku `npm install -g heroku`<br/>
 Login into heroku account `heroku login`<br/>
-If successfully loged in create new heroku application  `heroku create newAppName`<br/><br />
+If successfully loged in create new heroku application  `heroku create newappname`<br/><br />
 Deploy myApp to heroku<br/>
+`git init`<br/>
+`heroku git:remote -a newappname`<br/>
+//`heroku buildpacks:set heroku/nodejs`<br/>
 `git add .`<br/>
 `git commit -m "first deploy"`<br/>
 `git push heroku master`<br/>

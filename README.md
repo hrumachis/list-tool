@@ -10,14 +10,13 @@ Inside "myApp" directory run `ng serve` for a dev server.<br/>
 Navigate to `http://localhost:4200/`.
 
 ## Running remotly (Heroku)
-Navigate to "myApp" parent directory <br /><br />
+Inside master directory open command prompt <br /><br />
 Install heroku `npm install -g heroku`<br/>
 Login into heroku account `heroku login`<br/>
 If successfully loged in create new heroku application  `heroku create newappname`<br/><br />
 Deploy myApp to heroku<br/>
 `git init`<br/>
 `heroku git:remote -a newappname`<br/>
-//`heroku buildpacks:set heroku/nodejs`<br/>
 `git add .`<br/>
 `git commit -m "first deploy"`<br/>
 `git push heroku master`<br/>

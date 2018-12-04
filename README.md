@@ -1,11 +1,13 @@
-# MyApp
+# Application
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
-* REST API for static data [JSON-SERVER](https://staticdata.herokuapp.com)<br />
-    GitHub: `https://github.com/hrumachis/json-server`
+* REST API for static data [JSON-SERVER](https://listtool.herokuapp.com)<br/>
+<br/>
+* REST API for static data [JSON-SERVER](https://staticdata.herokuapp.com)<br/>
+    GitHub: (https://github.com/hrumachis/json-server)
 
 ## Live Demo version
-Live demo version you can find here `https://listtool.herokuapp.com`\n
+Live demo version you can find here `https://listtool.herokuapp.com`
 
 ## Running localy
 Inside "myApp" directory run `ng serve` for a dev server.

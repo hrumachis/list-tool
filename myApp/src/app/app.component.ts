@@ -12,6 +12,9 @@ export class AppComponent {
   busy: boolean = false;
 
   constructor(private Auth: AuthService, private Database: DataService, private router: Router) { }
+  online() {
+    return this.Auth.isLoggedIn;
+  }
 
   logout() {
     let self = this;

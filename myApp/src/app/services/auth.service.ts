@@ -31,10 +31,6 @@ export class AuthService {
 
 		return this.http.get(this.ROOT_URL + "/login", { params, responseType: 'text' });
 	}
-	
-	online() {
-		return this.loggedInState;
-	}
     
     register (username, password, password2, port) {
 		let params = new HttpParams().set('username', username)

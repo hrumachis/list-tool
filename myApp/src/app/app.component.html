@@ -5,7 +5,7 @@
             <img src="assets/images/favicon.png" width="40"/>
             <h1 class="margin-small-left">List tool</h1>
         </div></a>
-        <div *ngIf="Auth.online()" class="options flex flex-right flex-middle">
+        <div *ngIf="online()" class="options flex flex-right flex-middle">
             <button (click)="logout()" [disabled]="busy">
                 <span *ngIf="!busy" class="hidden@max-phone">Logout</span>
                 <app-icon *ngIf="!busy" class="hidden@min-phone position-center" name="sign-out"></app-icon>

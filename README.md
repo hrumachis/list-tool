@@ -3,7 +3,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 * Live demo version can be found here [Demo](https://listtool.herokuapp.com)<br/>
 <br/>
-* REST API for static data [JSON-SERVER](https://staticdata.herokuapp.com)<br/>
+* REST API for static data* [JSON-SERVER](https://staticdata.herokuapp.com)<br/>
     GitHub: https://github.com/hrumachis/json-server
 
 ## Live Demo version
